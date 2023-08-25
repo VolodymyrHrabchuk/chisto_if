@@ -1,0 +1,102 @@
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+@import "variables";
+@import "normalize";
+@import "header";
+@import "hero";
+@import "about";
+@import "service";
+@import "pros";
+@import "certificate";
+@import "questions";
+@import "reviews";
+@import "footer";
+@import "blog";
+@import "cert-page";
+@import "options";
+@import "offers";
+@import "pagination";
+@import "privacy";
+@import "blog-page";
+@import "blog-footer";
+@import "popup";
+@import "popup-gift";
+@import "media";
+
+* {
+  font-family: "Montserrat";
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1216px;
+  position: relative;
+  padding: 0;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 57px;
+  line-height: 80px;
+  letter-spacing: 0.01em;
+  color: $black;
+  margin: 0;
+}
+
+.subheading {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: $grey;
+  margin: 20px 0 52px;
+}
+
+.first-swiper {
+  margin-top: 52px;
+}
+
+.error {
+  &-wrap {
+    max-width: 911px;
+    width: 100%;
+    margin: 52px auto 124px;
+  }
+  &-text {
+    text-align: center;
+  }
+}
+
+.err-pic {
+  margin-top: 16px;
+}
+
+.breadcrumbs-link {
+  text-decoration: none;
+  color: $grey;
+}
+
+.breadcrumbs-link:hover {
+  color: $blue;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: $blue;
+}
+
+.btn-link:hover {
+  color: $blue;
+}
+
+.blog-btn {
+  text-decoration: none;
+  color: $blue;
+}
+.blog-btn:hover {
+  color: $blue;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

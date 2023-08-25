@@ -1,0 +1,56 @@
+.tab-image {
+  max-width: 916px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.tab-heading {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 39px;
+  color: $black;
+  margin: 12px 0 0;
+}
+
+.tab-content {
+  margin: 0 0 124px;
+}
+
+.nav {
+  --bs-link-hover-color: #387ff7;
+}
+.offer-tabs {
+  margin: 52px 0 0 112px;
+  &__swiper {
+    margin: 0;
+  }
+}
+
+.nav-tabs .nav-link {
+  border: none !important;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  gap: 64px;
+  margin: 0 0 32px;
+}
+.nav-tabs .nav-link.active {
+  color: $blue;
+}
+
+.nav-link {
+  color: $grey;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  max-width: 246px;
+  width: 100%;
+  padding: 0;
+}
+.nav-justified > .nav-link,
+.nav-justified .nav-item {
+  flex-grow: 0;
+  max-width: 248px;
+}

@@ -1,0 +1,64 @@
+@import "~bootstrap/scss/bootstrap";
+
+$accordion-icon-active-color: #387ff7;
+.accordion {
+  --bs-accordion-color: #387ff7 !important;
+  --bs-accordion-border-color: #387ff7 !important;
+  --bs-accordion-btn-color: #fafafa;
+
+  --bs-accordion-active-color: #fafafa !important;
+  --bs-accordion-active-bg: #387ff7 !important;
+
+  &-item {
+    color: $grey !important;
+    --bs-accordion-border-radius: 20px !important;
+    --bs-accordion-inner-border-radius: 19px !important;
+    --bs-accordion-btn-focus-box-shadow: none !important;
+    border: none !important;
+  }
+
+  &-item:last-of-type .accordion-button {
+    border-bottom-left-radius: var(--bs-accordion-inner-border-radius) !important;
+    border-bottom-right-radius: var(--bs-accordion-inner-border-radius) !important;
+  }
+
+  &-button {
+    color: $blue;
+    background-color: $white;
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  &-button.collapsed {
+    color: $blue;
+  }
+
+  &-button:after {
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fafafa'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+  }
+
+  &-button.collapsed::after {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23387FF7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+  }
+
+  &-header {
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    border: 1px solid $blue;
+    border-radius: 20px;
+  }
+}
+
+.questions {
+  margin: 124px 0 0;
+
+  &__item {
+    margin: 10px 0;
+  }
+
+  &__wrapper {
+    margin: 60px 0 0;
+  }
+}

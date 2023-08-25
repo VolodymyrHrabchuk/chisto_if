@@ -1,0 +1,87 @@
+ ///colors///
+$black: #1a1a1b;
+$blue: #387ff7;
+$inscriptions: rgba(217, 217, 217, 0.85);
+$inscriptions-text: #3e3d3d;
+$light-blue-icons: #bdd6e3;
+$red: #fb3030;
+$white: #fafafa;
+$grey: #8d8d8d;
+$dgrey:#4E4E4E;
+
+////buttons///
+
+.btn-md-bl {
+  width: 335px;
+  height: 72px;
+  border-radius: 48px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  background-color: $blue;
+  border: none !important;
+  color: $white;
+  cursor: pointer;
+  margin: 0;
+}
+
+.btn-md-bl:hover {
+  box-shadow: 12px 12px 24px #d3e1f8;
+}
+
+.btn-sm-bl {
+  width: 263px;
+  height: 64px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  background-color: $blue;
+  border: none !important;
+  color: $white;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 48px;
+}
+
+.btn-sm-bl:hover {
+  box-shadow: 12px 12px 24px #d3e1f8;
+}
+
+.btn-md-wh {
+  width: 335px;
+  height: 72px;
+  border-radius: 48px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  color: $blue;
+  border: none;
+  background-color: transparent;
+}
+
+.btn-md-wh:hover {
+  background: #ffffff;
+  box-shadow: 12px 12px 24px #d3e1f8;
+}
+
+.btn-lbl {
+  width: 335px;
+  height: 64px;
+  background: #e4f6ff;
+  border-radius: 48px;
+  font-weight: 500;
+  font-size: 19px;
+  border: none;
+  line-height: 23px;
+  color: $blue;
+
+  margin: 36px 0 0;
+}
+
+.btn-lbl:hover {
+  box-shadow: 12px 12px 24px #D3E1F8;
+}
+/// margin///
+.heading.mt {
+  margin-top: 124px;
+}

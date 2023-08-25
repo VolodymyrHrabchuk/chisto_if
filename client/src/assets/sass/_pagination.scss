@@ -1,0 +1,39 @@
+.pagination {
+  justify-content: center;
+  align-items: center;
+  margin: 52px 0 0;
+  gap: 10px;
+  color: $grey;
+  max-width: 1216px;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 30px;
+    max-width: 1216px;
+    margin: 52px 0 0 0;
+  }
+
+  &__prev {
+    display: none;
+  }
+
+  &__next {
+    display: none;
+  }
+
+  &__active {
+    color: $blue;
+  }
+
+  &__image {
+    max-width: 593px;
+    width: 100%;
+  }
+}
+
+
+.results-tabs {
+  margin: 72px 0 0 112px;
+}

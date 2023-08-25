@@ -1,0 +1,34 @@
+.offers-tab {
+  position: relative;
+}
+
+.service-price {
+  display: flex;
+  flex-direction: column;
+  max-width: 885px;
+  width: 100%;
+  border: 1px solid #387ff7;
+  border-radius: 12px;
+  padding: 57px 39px 37px 44px;
+  gap: 29px;
+
+  &__name {
+    color: $black;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+  }
+}
+
+.pattern2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

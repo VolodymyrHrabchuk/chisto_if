@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 40px 0;
+  max-width: 1440px;
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 72px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $grey;
+    }
+    &-link:hover {
+      color: #387ff6;
+    }
+
+    &-link.active {
+      color: $blue;
+    }
+    &-item {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+  }
+
+  &__contacts > a {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: $black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+  background: $white;
+  z-index: 10;
+}
+
+.header-placeholder {
+  height: 0;
+}
+
+.visible-ph {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  color: #1a1a1b;
+  width: 28px;
+  height: 28px;
+}
+
+.close-icon {
+  display: none;
+  color: #1a1a1b;
+  width: 28px;
+  height: 28px;
+}

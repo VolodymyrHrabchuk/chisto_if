@@ -1,0 +1,42 @@
+.top-sec {
+  position: relative;
+  max-width: 1008px;
+}
+
+.pattern {
+  &-blog {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &-bottom {
+    position: absolute;
+    bottom: -120px;
+    right: 0px;
+  }
+}
+
+.date {
+  right: -20%;
+  position: absolute;
+  top: 20px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $grey;
+  margin: 0;
+}
+
+.article {
+  margin: 52px 0 0;
+  &-text {
+    font-size: 19px;
+    line-height: 28px;
+    color: $grey;
+  }
+
+  &__inner {
+    margin: 52px 0 124px;
+    position: relative;
+  }
+}
