@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation } from "swiper/modules";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import CleanersData from "./CleanersData";
@@ -46,7 +46,7 @@ const Cleaners = () => {
               centeredSlides: true,
             },
             480: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
             760: {
               slidesPerView: 2,

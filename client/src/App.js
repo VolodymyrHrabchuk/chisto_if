@@ -1,48 +1,40 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ".//assets/sass/main.scss";
 import { useLocation, useRoutes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Home from "./pages/Home";
-import Offers from "./pages/Offers";
-import Results from "./pages/Results"
-import CertPage from "./pages/CertPage";
-import Blog from "./pages/Blog";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import ErrorPage from "./pages/ErrorPage";
-import BlogItem from "./components/BlogItem";
 
+const Home = lazy(() => import("./pages/Home"));
+const Offers = lazy(() => import("./pages/Offers"));
+const Results = lazy(() => import("./pages/Results"));
+const CertPage = lazy(() => import("./pages/CertPage"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogItem = lazy(() => import("./components/BlogItem"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 
 const App = () => {
   const element = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/services", element: <Offers /> },
-    { path: "/gallery", element: <Results/> },
+    { path: "/gallery", element: <Results /> },
     { path: "/certifications", element: <CertPage /> },
     { path: "/blog", element: <Blog /> },
     { path: "/blog/article1", element: <BlogItem /> },
     { path: "/privacy", element: <PrivacyPolicy /> },
     { path: "*", element: <ErrorPage /> },
   ]);
+
   const location = useLocation();
 
   return (
-  //  <Routes>
-  //   <Route  path="/" element={<Home />}/>
-  //   <Route  path="/services" element={<Offers />}/>
-  //   <Route  path="/gallery" element={<Results/>}/>
-  //   <Route  path="/certifications" element={<CertPage />}/>
-  //   <Route  path="/blog" element={<Blog />}/>
-  //   <Route  path="/blog/article1" element={<BlogItem />}/>
-  //   <Route  path="/privacy" element={<PrivacyPolicy />}/>
-  //   <Route path="*" element={<ErrorPage />}/>
-  //  </Routes>
     <div className="App">
       <AnimatePresence mode="wait" initial={false}>
-        {React.cloneElement(element, { key: location.pathname })}
+        <Suspense fallback={<div>Loading...</div>}>
+          {React.cloneElement(element, { key: location.pathname })}
+        </Suspense>
       </AnimatePresence>
     </div>
-
   );
-}
+};
 
 export default App;

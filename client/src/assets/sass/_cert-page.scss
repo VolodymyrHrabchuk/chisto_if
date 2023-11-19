@@ -175,6 +175,33 @@
   background-image: url(".././img/right.svg");
 }
 
+
+.swiperHomePrev,
+.swiperHomeNext {
+  top: 45%;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  z-index: 1;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.swiperHomePrev {
+  left: 0;
+  transform: translateX(-75px);
+  background-image: url(".././img/left.svg");
+}
+
+.swiperHomeNext {
+  right: 0;
+  transform: translateX(75px);
+  background-image: url(".././img/right.svg");
+}
+
 .swiperBlogPrev,
 .swiperBlogNext {
   top: 45%;

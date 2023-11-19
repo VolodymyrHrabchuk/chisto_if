@@ -1,23 +1,8 @@
 import { motion } from "framer-motion";
 
-const ServiceItem = ({ imgSrc, heading, description, isActive }) => {
+const ServiceItem = ({ imgSrc, heading, description }) => {
   return (
-    <motion.div
-      initial={{
-        opacity: isActive ? 0 : 1,
-        y: isActive ? 50 : 0,
-      }}
-      animate={{
-        opacity: isActive ? 1 : 0,
-        y: isActive ? 0 : 50,
-      }}
-      exit={{
-        opacity: 0,
-        y: -50,
-      }}
-      transition={{ duration: 1 }}
-      className="services__item"
-    >
+    <motion.div className="services__item">
       <img src={imgSrc} alt="" className="services__pic" />
       <div className="services__descr">
         <p className="services__descr-heading">{heading}</p>

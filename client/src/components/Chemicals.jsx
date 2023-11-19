@@ -1,6 +1,6 @@
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation } from "swiper/modules";
 import { ReactComponent as Pattern } from "../assets/img/pattern.svg";
 import chemical1 from "../assets/img/chemicals1.png";
 import chemical2 from "../assets/img/chemicals2.png";

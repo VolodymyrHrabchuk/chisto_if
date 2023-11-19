@@ -79,7 +79,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <p className="hero__info-heading">
-              <CountUp end={2763} duration={2.65} />+
+              <CountUp end={2763} duration={3.65} />+
             </p>
             <p className="hero__info-text">успішно виконаних замовлень</p>
           </motion.div>
@@ -91,7 +91,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <p className="hero__info-heading">
-              <CountUp end={95} duration={2.75} />%
+              <CountUp end={95} duration={3.75} />%
             </p>
             <p className="hero__info-text">
               задоволених клієнтів звертається знову
@@ -105,7 +105,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <p className="hero__info-heading">
-              <CountUp end={3} duration={2.85} />+
+              <CountUp end={3} duration={3.85} />+
             </p>
             <p className="hero__info-text">
               насичений років професійного досвіду

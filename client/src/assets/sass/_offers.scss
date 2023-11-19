@@ -6,12 +6,15 @@
   display: flex;
   flex-direction: column;
   max-width: 885px;
-  width: 100%;
+  // width: 100%;
   border: 1px solid #387ff7;
   border-radius: 12px;
   padding: 57px 39px 37px 44px;
   gap: 29px;
 
+  &__list { 
+    margin: 10px 0 0;
+  }
   &__name {
     color: $black;
     font-weight: 500;
@@ -31,4 +34,5 @@
   position: absolute;
   right: 0;
   top: 0;
+  transform: translateX(14px);
 }

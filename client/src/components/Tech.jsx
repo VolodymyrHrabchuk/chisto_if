@@ -1,11 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
-import vacuum1 from "../assets/img/vacuum-1.png";
-import vacuum2 from "../assets/img/vacuum-2.png";
-import vacuum3 from "../assets/img/vacuum-3.png";
-import vacuum4 from "../assets/img/vacuum-4.png";
 import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
+import TechData from "./TechData";
 
 const Tech = () => {
   const swiperTechPrev = useRef(null);
@@ -49,7 +46,7 @@ const Tech = () => {
               centeredSlides: true,
             },
             480: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
             760: {
               slidesPerView: 2,
@@ -67,78 +64,17 @@ const Tech = () => {
             swiper.navigation.update();
           }}
         >
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum1} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Пароочисник</h4>
-                <p className="card-item__brand">SC 3 Upright EasyFix Premium</p>
+          {TechData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="card-item__item">
+                <img src={item.image} alt="" className="card-item__img" />
+                <div className="card-item__descr">
+                  <h4 className="card-item__type">{item.type}</h4>
+                  <p className="card-item__brand">{item.brand}</p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum2} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Машина для чищення килимів</h4>
-                <p className="card-item__brand">BRC 40/22 C</p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum3} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Пилосос</h4>
-                <p className="card-item__brand">NT 90/2 Me Classic Edition</p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum4} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Пилосос</h4>
-                <p className="card-item__brand">NT 90/2 Me Classic Edition</p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum1} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Пароочисник</h4>
-                <p className="card-item__brand">SC 3 Upright EasyFix Premium</p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum2} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Машина для чищення килимів</h4>
-                <p className="card-item__brand">BRC 40/22 C</p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum3} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Пилосос</h4>
-                <p className="card-item__brand">NT 90/2 Me Classic Edition</p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="card-item__item">
-              <img src={vacuum4} alt="" className="card-item__img" />
-              <div className="card-item__descr">
-                <h4 className="card-item__type">Пилосос</h4>
-                <p className="card-item__brand">NT 90/2 Me Classic Edition</p>
-              </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div className="swiperTechPrev" ref={swiperTechPrev}></div>
         <div className="swiperTechNext" ref={swiperTechNext}></div>

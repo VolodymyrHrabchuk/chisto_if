@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation } from "swiper/modules";
 import { useRef } from "react";
 import BlogFooterIm from "../assets/img/blog-footer.png";
 import BlogFooterIm1 from "../assets/img/blog-footer-1.png";

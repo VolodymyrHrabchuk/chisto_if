@@ -22,24 +22,40 @@ const OffersPrice = () => {
           <Tab eventKey="cleaning" title="Прибирання">
             <div className="service-price">
               <span className="service-price__name">
-                Генеральне
+                Генеральне:
                 <span className="service-price__descr">
                   {" "}
-                  - від 45-65 грн/м2
+                  від 85 грн/м<sup>2</sup>
                 </span>
               </span>
               <span className="service-price__name">
-                Регулярне
-                <span className="service-price__descr"> - від 25 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Коменрційні приміщення
-                <span className="service-price__descr"> - від 35 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Післяремонтне
+                Регулярне:
                 <span className="service-price__descr">
-                  (залежить від того, чи вмонтовані меблі) - від 40 грн/м2
+                  {" "}
+                  від 45 грн/м<sup>2</sup>
+                </span>
+              </span>
+              <span className="service-price__name">
+                Комерційні приміщення:
+                <span className="service-price__descr">
+                  {" "}
+                  від 70 грн/м<sup>2</sup>
+                </span>
+              </span>
+              <span className="service-price__name">
+                Післяремонтне:
+                <span className="service-price__descr">
+                  <ul className="service-price__list">
+                    <li>
+                      без меблів від 85 грн/м<sup>2</sup>
+                    </li>
+                    <li>
+                      частково меблі від 100 грн/м<sup>2</sup>
+                    </li>
+                    <li>
+                      меблі вмонтовані повністю від 115 грн/м<sup>2</sup>
+                    </li>
+                  </ul>
                 </span>
               </span>
             </div>
@@ -47,21 +63,17 @@ const OffersPrice = () => {
           <Tab eventKey="windows" title="Вікна">
             <div className="service-price">
               <span className="service-price__name">
-                Генеральне
-                <span className="service-price__descr">- від 45-65 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Регулярне
-                <span className="service-price__descr">- від 25 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Коменрційні приміщення
-                <span className="service-price__descr">- від 35 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Післяремонтне
+                Миття вікон після ремонту:
                 <span className="service-price__descr">
-                  (залежить від того, чи вмонтовані меблі) - від 40 грн/м2
+                  {" "}
+                  від 150 грн/м<sup>2</sup>
+                </span>
+              </span>
+              <span className="service-price__name">
+                Сезонне миття вікон:
+                <span className="service-price__descr">
+                  {" "}
+                  від 130 грн/м<sup>2</sup>
                 </span>
               </span>
             </div>
@@ -69,21 +81,17 @@ const OffersPrice = () => {
           <Tab eventKey="additional" title="Додаткові&nbsp;послуги">
             <div className="service-price">
               <span className="service-price__name">
-                Генеральне
-                <span className="service-price__descr">- від 45-65 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Регулярне
-                <span className="service-price__descr">- від 25 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Коменрційні приміщення
-                <span className="service-price__descr">- від 35 грн/м2</span>
-              </span>
-              <span className="service-price__name">
-                Післяремонтне
+                Глибока чистка підлоги:
                 <span className="service-price__descr">
-                  (залежить від того, чи вмонтовані меблі) - від 40 грн/м2
+                  {" "}
+                  від 60 грн/м<sup>2</sup>
+                </span>
+              </span>
+              <span className="service-price__name">
+                Прибирання комерційних приміщень:
+                <span className="service-price__descr">
+                  {" "}
+                  від 70 грн/м<sup>2</sup>
                 </span>
               </span>
             </div>
@@ -91,22 +99,20 @@ const OffersPrice = () => {
           <Tab eventKey="dry-cleaning" title="Хімчистка">
             <div className="service-price">
               <span className="service-price__name">
-                Генеральне
-                <span className="service-price__descr">- від 45-65 грн/м2</span>
+                Хімчистка дивану:
+                <span className="service-price__descr"> від 1200 грн</span>
               </span>
               <span className="service-price__name">
-                Регулярне
-                <span className="service-price__descr">- від 25 грн/м2</span>
+                Хімчистка матрацу (односпальний):
+                <span className="service-price__descr"> від 700 грн</span>
               </span>
               <span className="service-price__name">
-                Коменрційні приміщення
-                <span className="service-price__descr">- від 35 грн/м2</span>
+                Хімчистка матрацу (двоспальний):
+                <span className="service-price__descr"> від 1200 грн</span>
               </span>
               <span className="service-price__name">
-                Післяремонтне
-                <span className="service-price__descr">
-                  (залежить від того, чи вмонтовані меблі) - від 40 грн/м2
-                </span>
+                Хімчистка крісла:
+                <span className="service-price__descr"> від 350 грн</span>
               </span>
             </div>
           </Tab>

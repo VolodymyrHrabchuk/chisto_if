@@ -1,14 +1,18 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination } from "swiper/modules";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import article1 from "../assets/img/article-1.png";
-import article2 from "../assets/img/article-2.png";
-import article3 from "../assets/img/article-3.png";
 import { ReactComponent as Pattern } from "../assets/img/pattern.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import articlesData from "./ArticlesData";
 
 const Articles = () => {
+  // Group articles into sets of three
+  const groupedArticles = [];
+  for (let i = 0; i < articlesData.length; i += 3) {
+    groupedArticles.push(articlesData.slice(i, i + 3));
+  }
+
   return (
     <div className="container">
       <div className="breadcrumbs">
@@ -23,278 +27,40 @@ const Articles = () => {
         <Pattern className="pattern" />
       </div>
       <h2 className="heading">Статті</h2>
-      <Swiper
-        modules={[Pagination]}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-      >
-        <SwiperSlide>
-          <div className="articles">
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.1,
-                  delay: 0.5,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article1} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">
-                  Домашні улюбленці: як ефективно позбавитись шерсті
-                </h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.2,
-                  delay: 0.8,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article2} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">
-                  Токсичні складники найпопулярніших миючих засобів
-                </h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.3,
-                  delay: 1,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article3} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">Правильне миття вікон</h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="articles">
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.1,
-                  delay: 0.5,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article1} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">
-                  Домашні улюбленці: як ефективно позбавитись шерсті
-                </h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.2,
-                  delay: 0.8,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article2} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">
-                  Токсичні складники найпопулярніших миючих засобів
-                </h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.3,
-                  delay: 1,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article3} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">Правильне миття вікон</h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="articles">
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.1,
-                  delay: 0.5,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article1} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">
-                  Домашні улюбленці: як ефективно позбавитись шерсті
-                </h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.2,
-                  delay: 0.8,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article2} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">
-                  Токсичні складники найпопулярніших миючих засобів
-                </h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-            <motion.div
-              className="articles__item"
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: {
-                  duration: 0.3,
-                  delay: 1,
-                },
-              }}
-              viewport={{ once: true }}
-            >
-              <img src={article3} alt="" className="articles__img" />
-              <div className="articles__descr">
-                <h3 className="articles__heading">Правильне миття вікон</h3>
-                <p className="articles__text">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
-                </p>
-                <p className="articles__text">18/02/2022</p>
-                <button className="btn-lbl">
-                  <Link to={"/blog/article1"} className="blog-btn">
-                    Читати
-                  </Link>
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </SwiperSlide>
+      <Swiper modules={[Pagination]} slidesPerView={1} pagination={{ clickable: true }}>
+        {groupedArticles.map((group, index) => (
+          <SwiperSlide key={index}>
+            <div className="articles">
+              {group.map((article, articleIndex) => (
+                <motion.div
+                  key={articleIndex}
+                  className="articles__item"
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    opacity: 1,
+                    transition: {
+                      duration: 0.1,
+                      delay: 0.5 + articleIndex * 0.1,
+                    },
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <img src={article.image} alt="" className="articles__img" />
+                  <div className="articles__descr">
+                    <h3 className="articles__heading">{article.title}</h3>
+                    <p className="articles__text">{article.description}</p>
+                    <p className="articles__text">{article.date}</p>
+                    <button className="btn-lbl">
+                      <Link to={article.link} className="blog-btn">
+                        Читати
+                      </Link>
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

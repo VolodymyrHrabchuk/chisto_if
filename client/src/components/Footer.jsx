@@ -51,8 +51,8 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__contacts">
-          <a className="footer__contacts-item" href="tel:+380666718784">
-            +380 66 671 8784
+          <a className="footer__contacts-item" href="tel:380677699792">
+            +38 067 769 9792
           </a>
           <a className="footer__contacts-item" href="mailto:karina@gmail.com">
             karina@gmail.com
@@ -88,8 +88,8 @@ const Footer = () => {
               <Instagram />
             </a>
             <div className="footer-mob-inner__items">
-              <a className="footer__contacts-item" href="tel:+380666718784">
-                +380 66 671 8784
+              <a className="footer__contacts-item" href="tel:+380677699792">
+                +38 067 769 9792
               </a>
               <a
                 className="footer__contacts-item"

@@ -1,9 +1,10 @@
 import general from "../assets/img/general.webp";
-import commercial from "../assets/img/commercial.webp";
-import regular from "../assets/img/regular-cleaning.png";
+import commercial from "../assets/img/commercial.jpg";
+import regular from "../assets/img/regular-cleaning.jpg";
 import renovation from "../assets/img/renovation.webp";
 import windows from "../assets/img/windows.webp";
 import furniture from "../assets/img/furniture.webp";
+import floor from "../assets/img/floor.jpg";
 
 const ServiceData = [
   {
@@ -151,7 +152,7 @@ const ServiceData = [
     },
   },
   {
-    imgSrc: furniture,
+    imgSrc: floor,
     heading: "Глибока чистка підлоги:",
     description:
       "Сенс глибокого чищення підлоги полягає в тому, щоб ефективно видалити глибоке забруднення з будь-якого підлогового покриття. Застосовується спеціальне обладнання та мийні засоби в залежності від типу підлоги.",
