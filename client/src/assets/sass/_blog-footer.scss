@@ -32,7 +32,7 @@
 
   &__list {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
   }
 
@@ -61,5 +61,6 @@
   &__img {
     max-width: 320px;
     width: 100%;
+    border-radius: 25px;
   }
 }

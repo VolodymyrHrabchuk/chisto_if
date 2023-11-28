@@ -1,8 +1,6 @@
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import { ReactComponent as PatternBlog } from "../assets/img/pattern-blog.svg";
 import { ReactComponent as PatternBottom } from "../assets/img/pattern-bottom.svg";
-import BlogPic from "../assets/img/blog-photo.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -17,6 +15,14 @@ const BlogItem = () => {
     const randomArticlesSubset = shuffledArticles.slice(0, 3);
     setRandomArticles(randomArticlesSubset);
   }, []);
+  const { articleId } = useParams();
+  const selectedArticle = articlesData.find(
+    (article) => article.link === `/blog/${articleId}`
+  );
+
+  if (!selectedArticle) {
+    return <div>Article not found</div>;
+  }
 
   const shuffleArray = (arr) => {
     const shuffled = [...arr];
@@ -25,6 +31,28 @@ const BlogItem = () => {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
+  };
+
+  const createParagraphs = (text) => {
+    return text.split("\n").map((paragraph, index) => {
+      // Split the paragraph into parts based on the asterisks
+      const parts = paragraph.split("*");
+
+      return (
+        <p key={index} className="article-text">
+          {parts.map((part, i) =>
+            // Apply bold styling to odd-indexed parts
+            i % 2 === 1 ? (
+              <strong key={i} style={{ color: "#1A1A1B" }}>
+                {part}
+              </strong>
+            ) : (
+              <span key={i}>{part}</span>
+            )
+          )}
+        </p>
+      );
+    });
   };
 
   return (
@@ -48,7 +76,7 @@ const BlogItem = () => {
         </div>
 
         <div className="article">
-          <img src={articlesData[0].image} alt="" className="article__img" />
+          <img src={selectedArticle.image} alt="" className="article__img" />
           <motion.div
             className="article__inner"
             initial={{
@@ -65,8 +93,8 @@ const BlogItem = () => {
             }}
             viewport={{ once: true }}
           >
-            <h2 className="heading">{articlesData[0].title}</h2>
-            <p className="article-text">{articlesData[0].fullText}</p>
+            <h2 className="heading">{selectedArticle.title}</h2>
+            {createParagraphs(selectedArticle.fullText)}
             <PatternBottom className="pattern-bottom" />
           </motion.div>
         </div>
@@ -82,7 +110,11 @@ const BlogItem = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 * index }}
               >
-                <img src={article.image} alt="" className="random-articles__img" />
+                <img
+                  src={article.image}
+                  alt=""
+                  className="random-articles__img"
+                />
                 <h4 className="random-articles__heading">{article.title}</h4>
                 <p className="random-articles__text">{article.description}</p>
                 <Link to={article.link} className="random-articles__link">

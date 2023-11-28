@@ -90,7 +90,7 @@
     max-width: 672px;
     // width: 100%;
     background-color: $white;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     padding: 55px 72px 40px;
     border-radius: 12px;
   }
@@ -154,7 +154,7 @@
       border: 1px solid $dgrey;
       border-radius: 20px;
       width: calc(100% - 10px);
-    padding: 12px 0 16px 10px;
+      padding: 12px 0 16px 10px;
 
       color: $blue;
       font-size: 19px;
@@ -276,7 +276,7 @@
     width: 100%;
     background-color: $white;
     margin: 0 auto;
-    
+
     padding: 85px 72px 40px;
     border-radius: 12px;
     position: relative;
@@ -303,5 +303,4 @@
     letter-spacing: 0.01em;
     color: $grey;
   }
-
 }

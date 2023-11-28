@@ -992,4 +992,11 @@
       height: 78px;
     }
   }
+  .random-articles__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 24px;
+  }
 }

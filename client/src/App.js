@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import ".//assets/sass/main.scss";
-import { useLocation, useRoutes } from "react-router-dom";
+import { useLocation, useRoutes} from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -13,16 +13,18 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 
 const App = () => {
-  const element = useRoutes([
+  const routes = [
     { path: "/", element: <Home /> },
     { path: "/services", element: <Offers /> },
     { path: "/gallery", element: <Results /> },
     { path: "/certifications", element: <CertPage /> },
     { path: "/blog", element: <Blog /> },
-    { path: "/blog/article1", element: <BlogItem /> },
+    { path: "/blog/:articleId", element: <BlogItem /> },
     { path: "/privacy", element: <PrivacyPolicy /> },
     { path: "*", element: <ErrorPage /> },
-  ]);
+  ];
+
+  const element = useRoutes(routes);
 
   const location = useLocation();
 
