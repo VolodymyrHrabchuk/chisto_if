@@ -41,6 +41,10 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 0 42px;
+
+  &__img {
+    width: 100%;
+  }
 }
 
 .chem-swiper {
@@ -58,6 +62,10 @@
 
 .sec-swiper {
   margin: 52px 0 124px;
+}
+
+.sec-swiper > .swiper-wrapper {
+  align-items: center;
 }
 
 .swiperNavPrev,
@@ -174,7 +182,6 @@
   transform: translateX(75px);
   background-image: url(".././img/right.svg");
 }
-
 
 .swiperHomePrev,
 .swiperHomeNext {

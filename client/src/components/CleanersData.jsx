@@ -15,67 +15,67 @@ import tablefit from "../assets/img/tablefit.webp";
 const CleanersData = [
   {
     img: keradet,
-    type: "Универсальний засіб",
+    type: "Мийний засіб для підлоги",
     brand: "Kiehl",
   },
   {
     img: presto,
-    type: "Универсальний засіб",
+    type: "Догляд за деревʼяними поверхнями",
     brand: "Kiehl",
   },
   {
     img: procur,
-    type: "Универсальний засіб",
+    type: "Засіб для чищення підлоги",
     brand: "Kiehl",
   },
   {
     img: parketto,
-    type: "Универсальний засіб",
+    type: "Засіб для миття та догляду за деревʼяними підлогами",
     brand: "Kiehl",
   },
   {
     img: klaronet,
-    type: "Универсальний засіб",
+    type: "Мийний засіб для підлоги",
     brand: "Kiehl",
   },
   {
     img: jetactive,
-    type: "Универсальний засіб",
+    type: "Засіб для чищення з твердими включеннями",
     brand: "Kiehl",
   },
   {
     img: duocit,
-    type: "Универсальний засіб",
+    type: "Засіб для прибирання санітарних приміщень",
     brand: "Kiehl",
   },
   {
     img: desgoquat,
-    type: "Универсальний засіб",
+    type: "Дезінфікуючий концентрований засіб",
     brand: "Kiehl",
   },
   {
     img: corvett,
-    type: "Универсальний засіб",
+    type: "Засіб для глибокого чищення плитки",
     brand: "Kiehl",
   },
   {
     img: copex,
-    type: "Универсальний засіб",
+    type: "Універсальний засіб для глибокого чищення",
     brand: "Kiehl",
   },
   {
     img: xonforte,
-    type: "Универсальний засіб",
+    type: "Пінний чистячий засіб",
     brand: "Kiehl",
   },
   {
     img: tornado,
-    type: "Универсальний засіб",
+    type: "Інтенсивний засіб для чищення",
     brand: "Kiehl",
   },
   {
     img: tablefit,
-    type: "Универсальний засіб",
+    type: "Засіб для чищення офісних меблів",
     brand: "Kiehl",
   },
 ];

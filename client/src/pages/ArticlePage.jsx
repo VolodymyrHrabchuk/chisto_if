@@ -1,25 +1,34 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import BlogItem from "../components/BlogItem";
-import BlogFooter from "../components/BlogFooter";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { motion } from "framer-motion";
+
+const LazyHeader = lazy(() => import("../components/Header"));
+const LazyFooter = lazy(() => import("../components/Footer"));
+const LazyBlogItem = lazy(() => import("../components/BlogItem"));
+const LazyBlogFooter = lazy(() => import("../components/BlogFooter"));
 
 const ArticlePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+    <Suspense
+      fallback={
+        <div className="spinner-wrap">
+          <div className="spinner"></div>
+        </div>
+      }
     >
-      <Header />
-      <BlogItem />
-      <BlogFooter />
-      <Footer />
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <LazyHeader />
+        <LazyBlogItem />
+        <LazyBlogFooter />
+        <LazyFooter />
+      </motion.div>
+    </Suspense>
   );
 };
 

@@ -17,7 +17,13 @@ const Home = () => {
   }, []);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="spinner-wrap">
+          <div className="spinner"></div>
+        </div>
+      }
+    >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

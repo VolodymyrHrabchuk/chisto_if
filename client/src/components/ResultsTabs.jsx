@@ -35,22 +35,22 @@ const ResultsTabs = () => {
       >
         <Tabs defaultActiveKey="kitchen" className="tab-content" justify>
           <Tab eventKey="kitchen" title="Кухня">
-            <Pagination />
+            <Pagination tab="kitchen" />
           </Tab>
           <Tab eventKey="rooms" title="Кімнати">
-            <Pagination />
+            <Pagination tab="rooms" />
           </Tab>
           <Tab eventKey="bathroom" title="Ванна&nbsp;кімната">
-            <Pagination />
+            <Pagination tab="bathroom" />
           </Tab>
           <Tab eventKey="windows" title="Вікна">
-            <Pagination />
+            <Pagination tab="windows" />
           </Tab>
           <Tab eventKey="commercial" title="Комерційні&nbsp;приміщення">
-            <Pagination />
+            <Pagination tab="commercial" />
           </Tab>
           <Tab eventKey="dry-cleaning" title="Хімчистка">
-            <Pagination />
+            <Pagination tab="dry-cleaning" />
           </Tab>
         </Tabs>
       </motion.div>

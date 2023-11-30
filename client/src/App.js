@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import ".//assets/sass/main.scss";
-import { useLocation, useRoutes} from "react-router-dom";
+import { useLocation, useRoutes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -31,7 +31,13 @@ const App = () => {
   return (
     <div className="App">
       <AnimatePresence mode="wait" initial={false}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div className="spinner-wrap">
+              <div className="spinner"></div>
+            </div>
+          }
+        >
           {React.cloneElement(element, { key: location.pathname })}
         </Suspense>
       </AnimatePresence>

@@ -1,94 +1,88 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ReactPaginate from "react-paginate";
-import result1 from "../assets/img/result-1.png";
-import result2 from "../assets/img/result-2.png";
-import result3 from "../assets/img/result-3.png";
-import result4 from "../assets/img/result-4.png";
-import result5 from "../assets/img/result-5.png";
-import result6 from "../assets/img/result-6.png";
-import result7 from "../assets/img/result-7.png";
-import result8 from "../assets/img/result-8.png";
-import result9 from "../assets/img/result-9.png";
-import result10 from "../assets/img/result-10.png";
+import paginationData from "./PaginationData";
 
-const Pagination = () => {
-  const DATA = [
-    {
-      id: "1",
-      name: "image-1",
-      type: result1,
-    },
-    {
-      id: "2",
-      name: "image-2",
-      type: result2,
-    },
-    {
-      id: "3",
-      name: "image-3",
-      type: result3,
-    },
-    {
-      id: "4",
-      name: "image-4",
-      type: result4,
-    },
-    {
-      id: "5",
-      name: "image-5",
-      type: result5,
-    },
-    {
-      id: "6",
-      name: "image-6",
-      type: result6,
-    },
-    {
-      id: "7",
-      name: "image-7",
-      type: result7,
-    },
-    {
-      id: "8",
-      name: "image-8",
-      type: result8,
-    },
-    {
-      id: "9",
-      name: "image-9",
-      type: result9,
-    },
-    {
-      id: "10",
-      name: "image-10",
-      type: result10,
-    },
-  ];
+const Pagination = ({ tab }) => {
+  const filteredData = paginationData.filter((item) => item.tab === tab);
 
   const [pageNumber, setPageNumber] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const imagePerPage = 6;
   const pagesVisited = pageNumber * imagePerPage;
 
-  const displayImages = DATA.slice(
-    pagesVisited,
-    pagesVisited + imagePerPage
-  ).map((item) => {
-    return (
-      <div className="pagination-image">
-        <img src={item.type} alt="before-after" />
-      </div>
-    );
-  });
+  const displayImages = filteredData
+    .slice(pagesVisited, pagesVisited + imagePerPage)
+    .map((item) => {
+      return (
+        <motion.div
+          className="pagination-image"
+          key={item.id}
+          onClick={() => setSelectedImage(item.item)}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <img
+            src={item.item}
+            alt={`before-after-${item.id}`}
+            className="pagination__mini-img"
+          />
+        </motion.div>
+      );
+    });
 
-  const pageCounter = Math.ceil(DATA.length / imagePerPage);
+  const FullImageView = ({ imageUrl, onClose }) => (
+    <AnimatePresence>
+      {selectedImage && (
+        <motion.div
+          className="full-image-view"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeIn" } }}
+        >
+          <img src={imageUrl} alt="full-view" />
+          <motion.svg
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            className="full-image-btn"
+            fill="none"
+            onClick={onClose}
+            xmlns="http://www.w3.org/2000/svg"
+            whileHover={{
+              scale: 1.2,
+              rotate: 180,
+              transition: { duration: 0.2 },
+            }}
+          >
+            <circle cx="12" cy="12" r="10" stroke="#387ff7" strokeWidth="1.5" />
+            <path
+              d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5"
+              stroke="#387ff7"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </motion.svg>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+
+  const pageCounter = Math.ceil(filteredData.length / imagePerPage);
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
 
   return (
     <>
-      <div className="pagination__wrap">{displayImages}</div>
+      <div className="pagination__wrap">
+        {displayImages}
+        <FullImageView
+          imageUrl={selectedImage}
+          onClose={() => setSelectedImage(null)}
+        />
+      </div>
       <ReactPaginate
         pageCount={pageCounter}
         onPageChange={changePage}
