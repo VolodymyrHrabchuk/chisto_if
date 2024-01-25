@@ -1,10 +1,10 @@
 import general from "../assets/img/general.webp";
-import commercial from "../assets/img/commercial.jpg";
-import regular from "../assets/img/regular-cleaning.jpg";
+import commercial from "../assets/img/commercial-img.webp";
+import regular from "../assets/img/regular-cleaning.webp";
 import renovation from "../assets/img/renovation.webp";
 import windows from "../assets/img/windows.webp";
 import furniture from "../assets/img/furniture.webp";
-import floor from "../assets/img/floor.jpg";
+import floor from "../assets/img/floor.webp";
 
 const ServiceData = [
   {

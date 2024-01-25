@@ -1,5 +1,5 @@
 import { useState } from "react";
-import cert from "../assets/img/cert.JPG";
+import cert from "../assets/img/cert.webp";
 import GiftPopup from "../pages/GiftPopup";
 import { motion } from "framer-motion";
 

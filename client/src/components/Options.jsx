@@ -4,19 +4,17 @@ import Tabs from "react-bootstrap/Tabs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { ReactComponent as Pattern } from "../assets/img/pattern.svg";
-import renovation1 from "../assets/img/renovation-1.jpeg";
-import renovation2 from "../assets/img/renovation-2.jpeg";
-import renovation3 from "../assets/img/renovation-3.jpeg";
-import kitchen from "../assets/img/kitchen.jpg";
-import livingroom from "../assets/img/livingroom.jpg";
-import bathroom from "../assets/img/bathroom.jpg";
-import bedroom from "../assets/img/bedroom.jpg";
-import regular1 from "../assets/img/regular-1.jpeg";
-import regular2 from "../assets/img/regular-2.jpeg";
-import regular3 from "../assets/img/regular-3.jpeg";
-import commercial1 from "../assets/img/commercial-1.jpeg";
-import commercial2 from "../assets/img/commercial-2.jpeg";
-import commercial3 from "../assets/img/commercial-3.jpeg";
+import renovation1 from "../assets/img/after-renovation-1.webp";
+import renovation2 from "../assets/img/after-renovation-2.webp";
+import kitchen from "../assets/img/kitchen.webp";
+import livingroom from "../assets/img/livingroom.webp";
+import bathroom from "../assets/img/bathroom.webp";
+import bedroom from "../assets/img/bedroom.webp";
+import regular1 from "../assets/img/regular-1.webp";
+import regular2 from "../assets/img/regular-2.webp";
+import regular3 from "../assets/img/regular-3.webp";
+import commercial1 from "../assets/img/commercial-1.webp";
+
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -43,7 +41,7 @@ const Options = () => {
         animate={{
           opacity: 1,
           transition: {
-            duration: .6,
+            duration: 0.6,
             delay: 0.5,
           },
         }}
@@ -73,15 +71,11 @@ const Options = () => {
             >
               <SwiperSlide>
                 <img src={renovation1} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
+                <h3 className="tab-heading">Кімната</h3>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={renovation2} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={renovation3} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
+                <h3 className="tab-heading">Ванна кімната</h3>
               </SwiperSlide>
             </Swiper>
           </Tab>
@@ -151,11 +145,11 @@ const Options = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <img src={regular2} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
+                <h3 className="tab-heading">Кімната</h3>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={regular3} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
+                <h3 className="tab-heading">Ванна кімната</h3>
               </SwiperSlide>
             </Swiper>
           </Tab>
@@ -182,15 +176,7 @@ const Options = () => {
             >
               <SwiperSlide>
                 <img src={commercial1} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={commercial2} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={commercial3} alt="" className="tab-image" />
-                <h3 className="tab-heading">Кухня</h3>
+                <h3 className="tab-heading">Комерційні приміщення</h3>
               </SwiperSlide>
             </Swiper>
           </Tab>

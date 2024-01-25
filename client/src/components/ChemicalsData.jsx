@@ -9,22 +9,6 @@ import cert8 from "../assets/img/cert-8.webp";
 import cert9 from "../assets/img/cert-9.webp";
 
 const ChemicalsData = {
-  // chemicals: [
-  //   { id: 1, imgSrc: chemical1, type: "Универсальний засіб", brand: "FOX" },
-  //   {
-  //     id: 2,
-  //     imgSrc: chemical1,
-  //     type: "Базовий очисник для лінолеуму",
-  //     brand: "SKAT",
-  //   },
-  //   {
-  //     id: 3,
-  //     imgSrc: chemical2,
-  //     type: "Ополіскувач для посудомийних машин",
-  //     brand: "ecosolNEUTRAL",
-  //   },
-  //   // Add more chemical data objects as needed
-  // ],
   diplomas: [
     { id: 1, imgSrc: cert1 },
     { id: 2, imgSrc: cert2 },

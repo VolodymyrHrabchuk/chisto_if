@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import user1 from "../assets/img/avatar-1.jpeg";
-import user2 from "../assets/img/avatar-2.jpeg";
-import user3 from "../assets/img/avatar-3.jpeg";
-import user4 from "../assets/img/avatar-4.jpeg";
+import user1 from "../assets/img/avatar-1.webp";
+import user2 from "../assets/img/avatar-2.webp";
+import user3 from "../assets/img/avatar-3.webp";
+import user4 from "../assets/img/avatar-4.webp";
 
 const Reviews = () => {
   const reviewData = [

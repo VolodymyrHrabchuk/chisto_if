@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
-import hero from "../assets/img/hero.png";
+import hero from "../assets/img/hero.webp";
 import Popup from "../pages/Popup";
 import { motion, AnimatePresence } from "framer-motion";
 
