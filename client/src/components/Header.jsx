@@ -55,12 +55,12 @@ const Header = () => {
       {sticky && (
         <div
           style={{ height: headRef.current.offsetHeight }}
-          className="header-placeholder"
+          className='header-placeholder'
         />
       )}
       <header ref={headRef} className={sticky ? "header sticky" : "header"}>
-        <Logo className="logo" onClick={logoScroll} />
-        <div className="header__nav">
+        <Logo className='logo' onClick={logoScroll} />
+        <div className='header__nav'>
           <AnimatePresence>
             {isOpen ? (
               <motion.ul
@@ -72,10 +72,10 @@ const Header = () => {
                 exit={{ opacity: 0, transition: { duration: 0.3 } }}
               >
                 <motion.li
-                  className="header__nav-item"
+                  className='header__nav-item'
                   initial={{ y: 80, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{ delay: 0.1 }}
                   exit={{
                     opacity: 0,
                     y: 90,
@@ -85,15 +85,15 @@ const Header = () => {
                     },
                   }}
                 >
-                  <NavLink to={"/"} className="header__nav-link">
+                  <NavLink to={"/"} className='header__nav-link'>
                     Головна
                   </NavLink>
                 </motion.li>
                 <motion.li
-                  className="header__nav-item"
+                  className='header__nav-item'
                   initial={{ y: 80, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{ delay: 0.2 }}
                   exit={{
                     opacity: 0,
                     y: 90,
@@ -103,15 +103,15 @@ const Header = () => {
                     },
                   }}
                 >
-                  <NavLink to={"/services"} className="header__nav-link">
+                  <NavLink to={"/services"} className='header__nav-link'>
                     Послуги
                   </NavLink>
                 </motion.li>
                 <motion.li
-                  className="header__nav-item"
+                  className='header__nav-item'
                   initial={{ y: 80, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{ delay: 0.3 }}
                   exit={{
                     opacity: 0,
                     y: 90,
@@ -121,15 +121,15 @@ const Header = () => {
                     },
                   }}
                 >
-                  <NavLink to={"/blog"} className="header__nav-link">
+                  <NavLink to={"/blog"} className='header__nav-link'>
                     Блог
                   </NavLink>
                 </motion.li>
                 <motion.li
-                  className="header__nav-item"
+                  className='header__nav-item'
                   initial={{ y: 80, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{ delay: 0.4 }}
                   exit={{
                     opacity: 0,
                     y: 90,
@@ -139,15 +139,15 @@ const Header = () => {
                     },
                   }}
                 >
-                  <NavLink to={"/certifications"} className="header__nav-link">
+                  <NavLink to={"/certifications"} className='header__nav-link'>
                     Сертифікати
                   </NavLink>
                 </motion.li>
                 <motion.li
-                  className="header__nav-item"
+                  className='header__nav-item'
                   initial={{ y: 80, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{ delay: 0.5 }}
                   exit={{
                     opacity: 0,
                     y: 90,
@@ -157,35 +157,35 @@ const Header = () => {
                     },
                   }}
                 >
-                  <NavLink to={"/gallery"} className="header__nav-link">
+                  <NavLink to={"/gallery"} className='header__nav-link'>
                     Галерея
                   </NavLink>
                 </motion.li>
               </motion.ul>
             ) : (
               <ul className={`header__nav-list ${isOpen ? "active" : ""}`}>
-                <li className="header__nav-item">
-                  <NavLink to={"/"} className="header__nav-link">
+                <li className='header__nav-item'>
+                  <NavLink to={"/"} className='header__nav-link'>
                     Головна
                   </NavLink>
                 </li>
-                <li className="header__nav-item">
-                  <NavLink to={"/services"} className="header__nav-link">
+                <li className='header__nav-item'>
+                  <NavLink to={"/services"} className='header__nav-link'>
                     Послуги
                   </NavLink>
                 </li>
-                <li className="header__nav-item">
-                  <NavLink to={"/blog"} className="header__nav-link">
+                <li className='header__nav-item'>
+                  <NavLink to={"/blog"} className='header__nav-link'>
                     Блог
                   </NavLink>
                 </li>
-                <li className="header__nav-item">
-                  <NavLink to={"/certifications"} className="header__nav-link">
+                <li className='header__nav-item'>
+                  <NavLink to={"/certifications"} className='header__nav-link'>
                     Сертифікати
                   </NavLink>
                 </li>
-                <li className="header__nav-item">
-                  <NavLink to={"/gallery"} className="header__nav-link">
+                <li className='header__nav-item'>
+                  <NavLink to={"/gallery"} className='header__nav-link'>
                     Галерея
                   </NavLink>
                 </li>
@@ -193,7 +193,7 @@ const Header = () => {
             )}
             {isOpen && (
               <motion.div
-                className="close-icon-wrap"
+                className='close-icon-wrap'
                 initial={{ y: 80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -206,27 +206,27 @@ const Header = () => {
                   },
                 }}
               >
-                <Close className="close-icon" onClick={toggleMenu} />
+                <Close className='close-icon' onClick={toggleMenu} />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-        <div className="header__contacts">
-          <a href="tel:+380677699792" className="invisible-ph">
+        <div className='header__contacts'>
+          <a href='tel:+380677699792' className='invisible-ph'>
             +38 067 769 9792
           </a>
-          <a href="tel:+380677699792" className="visible-ph">
+          <a href='tel:+380677699792' className='visible-ph'>
             <Phone />
           </a>
           <a
-            href="https://instagram.com/karina_chisto_if"
-            target="_blank"
-            rel="noreferrer"
+            href='https://instagram.com/karina_chisto_if'
+            target='_blank'
+            rel='noreferrer'
           >
             <Instagram />
           </a>
         </div>
-        <MenuIcon className="menu-icon" onClick={toggleMenu} />
+        <MenuIcon className='menu-icon' onClick={toggleMenu} />
       </header>
     </>
   );

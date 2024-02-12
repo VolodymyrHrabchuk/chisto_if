@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
@@ -7,16 +7,26 @@ import TechData from "./TechData";
 const Tech = () => {
   const swiperTechPrev = useRef(null);
   const swiperTechNext = useRef(null);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.params.navigation.prevEl = swiperTechPrev.current;
+      swiperRef.current.params.navigation.nextEl = swiperTechNext.current;
+      swiperRef.current.navigation.init();
+      swiperRef.current.navigation.update();
+    }
+  }, []);
 
   return (
-    <div className="container">
-      <h2 className="heading">Техніка, якою працюємо</h2>
-      <h4 className="subheading">
+    <div className='container'>
+      <h2 className='heading'>Техніка, якою працюємо</h2>
+      <h4 className='subheading'>
         Якість прибирання великою мірою залежить від техніки, яку
         використовують. У нашому арсеналі високоякісна техніка фірми “Karcher”.
       </h4>
       <motion.div
-        className="technical-sw"
+        className='technical-sw'
         initial={{ opacity: 0 }}
         whileInView={{
           opacity: 1,
@@ -56,28 +66,25 @@ const Tech = () => {
               spaceBetween: 30,
             },
           }}
-          className="tech-swiper"
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = swiperTechPrev.current;
-            swiper.params.navigation.nextEl = swiperTechNext.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          className='tech-swiper'
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
         >
           {TechData.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="card-item__item">
-                <img src={item.image} alt="" className="card-item__img" />
-                <div className="card-item__descr">
-                  <h4 className="card-item__type">{item.type}</h4>
-                  <p className="card-item__brand">{item.brand}</p>
+              <div className='card-item__item'>
+                <img src={item.image} alt='' className='card-item__img' />
+                <div className='card-item__descr'>
+                  <h4 className='card-item__type'>{item.type}</h4>
+                  <p className='card-item__brand'>{item.brand}</p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiperTechPrev" ref={swiperTechPrev}></div>
-        <div className="swiperTechNext" ref={swiperTechNext}></div>
+        <div className='swiperTechPrev' ref={swiperTechPrev}></div>
+        <div className='swiperTechNext' ref={swiperTechNext}></div>
       </motion.div>
     </div>
   );
