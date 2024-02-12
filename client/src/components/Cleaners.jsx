@@ -5,22 +5,18 @@ import { motion } from "framer-motion";
 import CleanersData from "./CleanersData";
 
 const Cleaners = () => {
-  const swiperRef = useRef(null);
   const swiperCleanPrev = useRef(null);
   const swiperCleanNext = useRef(null);
+  const swiperRef = useRef(null);
 
   useEffect(() => {
-    if (
-      swiperRef.current &&
-      swiperCleanPrev.current &&
-      swiperCleanNext.current
-    ) {
+    if (swiperRef.current) {
       swiperRef.current.params.navigation.prevEl = swiperCleanPrev.current;
       swiperRef.current.params.navigation.nextEl = swiperCleanNext.current;
       swiperRef.current.navigation.init();
       swiperRef.current.navigation.update();
     }
-  }, [swiperRef, swiperCleanPrev, swiperCleanNext]);
+  }, []);
 
   return (
     <div className='container'>
@@ -71,11 +67,8 @@ const Cleaners = () => {
             },
           }}
           className='clean-swiper'
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = swiperCleanPrev.current;
-            swiper.params.navigation.nextEl = swiperCleanNext.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
         >
           {CleanersData.map((CleanersData, index) => (
