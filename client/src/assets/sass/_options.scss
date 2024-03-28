@@ -1,5 +1,5 @@
 .tab-image {
-  max-width: 916px;
+  max-width: 760px;
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
@@ -51,6 +51,6 @@
 }
 .nav-justified > .nav-link,
 .nav-justified .nav-item {
-  flex-grow: 0;
+  // flex-grow: 0;
   max-width: 248px;
 }

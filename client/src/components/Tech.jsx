@@ -23,7 +23,8 @@ const Tech = () => {
       <h2 className='heading'>Техніка, якою працюємо</h2>
       <h4 className='subheading'>
         Якість прибирання великою мірою залежить від техніки, яку
-        використовують. У нашому арсеналі високоякісна техніка фірми “Karcher”.
+        використовують. У нашому арсеналі високоякісна техніка фірми "Karcher",
+        "Bieffe", "Sprintus", "Santoemma" Та WFP система.
       </h4>
       <motion.div
         className='technical-sw'

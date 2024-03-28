@@ -6,6 +6,7 @@ import vacuum5 from "../assets/img/vacuum-5.webp";
 import vacuum6 from "../assets/img/vacuum-6.webp";
 import vacuum7 from "../assets/img/vacuum-7.webp";
 import vacuum8 from "../assets/img/vacuum-8.webp";
+import vacuum9 from "../assets/img/vacuum-9.webp";
 
 const TechData = [
   {
@@ -47,6 +48,11 @@ const TechData = [
     image: vacuum8,
     type: "Сушарка",
     brand: "DH Max",
+  },
+  {
+    image: vacuum9,
+    type: "Парогенератор",
+    brand: "Bieffe Magic Vapor RA",
   },
 ];
 
