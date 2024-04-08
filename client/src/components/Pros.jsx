@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ReactComponent as IconFirst } from "../assets/img/icon-1.svg";
 import { ReactComponent as IconSecond } from "../assets/img/icon-2.svg";
 import { ReactComponent as IconThird } from "../assets/img/icon-3.svg";
 import { ReactComponent as IconFourth } from "../assets/img/icon-4.svg";
 import { ReactComponent as IconFifth } from "../assets/img/icon-5.svg";
 import { ReactComponent as IconSixth } from "../assets/img/icon-6.svg";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const Pros = () => {
   const [animationIndex, setAnimationIndex] = useState(0);
-
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   useEffect(() => {
     const animationTimeout = setTimeout(() => {
       setAnimationIndex((prevIndex) => prevIndex + 1);
@@ -48,34 +49,33 @@ const Pros = () => {
   ];
 
   return (
-    <div className="container">
-      <h2 className="heading">Чому ми</h2>
-      <div className="pros">
-        <div className="pros__line">
+    <div className='container'>
+      <h2 className='heading'>Чому ми</h2>
+      <div className='pros' ref={ref}>
+        <div className='pros__line'>
           {icons.map((Icon, index) => (
             <motion.div
               key={index}
-              className="pros__item"
+              className='pros__item'
               initial={{
                 opacity: 0,
                 y: animationIndex >= index ? 50 : 0,
               }}
               animate={{
-                opacity: animationIndex >= index ? 1 : 0,
-                y: animationIndex >= index ? 0 : 50,
+                opacity: isInView ? 1 : 0,
+                y: isInView ? 0 : 50,
               }}
               transition={{
                 type: "spring",
                 damping: 10,
                 stiffness: 100,
                 duration: 0.6,
-                delay: index * 0.2, // Adjust the delay between animations
+                delay: index * 0.2, 
               }}
-              viewport={{ once: true }}
             >
               <Icon />
-              <h3 className="pros__heading">{headingTexts[index]}</h3>
-              <p className="pros__text">{descriptionTexts[index]}</p>
+              <h3 className='pros__heading'>{headingTexts[index]}</h3>
+              <p className='pros__text'>{descriptionTexts[index]}</p>
             </motion.div>
           ))}
         </div>

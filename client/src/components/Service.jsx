@@ -3,9 +3,12 @@ import React, { useRef } from "react";
 import ServiceItem from "./ServiceItem";
 import ServiceData from "./ServiceData";
 import { Navigation, Pagination } from "swiper/modules";
+import { useInView } from "framer-motion";
 
 const Service = () => {
   const swiperRef = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const goPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -20,9 +23,17 @@ const Service = () => {
   };
 
   return (
-    <div className="container">
-      <h2 className="heading ">Сервіси</h2>
-      <div className="services full">
+    <div className='container'>
+      <h2 className='heading '>Сервіси</h2>
+      <div
+        className='services full'
+        ref={ref}
+        style={{
+          scale: isInView ? 1 : 0.6,
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) .7s",
+        }}
+      >
         <Swiper
           ref={swiperRef}
           spaceBetween={30}
@@ -48,7 +59,7 @@ const Service = () => {
             320: {
               slidesPerView: 1,
               // navigation: true,
-              pagination: false,
+              pagination: true,
             },
           }}
           pagination={{
@@ -57,7 +68,7 @@ const Service = () => {
             dynamicBullets: true,
             dynamicMainBullets: 1,
           }}
-          className="home-swiper"
+          className='home-swiper'
           modules={[Navigation, Pagination]}
         >
           {ServiceData.map((service, index) => {
@@ -72,8 +83,8 @@ const Service = () => {
             );
           })}
         </Swiper>
-        <div className="swiperHomePrev" onClick={goPrev}></div>
-        <div className="swiperHomeNext" onClick={goNext}></div>
+        <div className='swiperHomePrev' onClick={goPrev}></div>
+        <div className='swiperHomeNext' onClick={goNext}></div>
       </div>
     </div>
   );

@@ -55,6 +55,11 @@ import pic54 from "../assets/img/before-after-54.webp";
 import pic55 from "../assets/img/before-after-55.webp";
 import pic56 from "../assets/img/before-after-56.webp";
 import pic57 from "../assets/img/before-after-57.webp";
+import pic58 from "../assets/img/before-after-58.webp";
+import pic59 from "../assets/img/before-after-59.webp";
+import pic60 from "../assets/img/before-after-60.webp";
+import pic61 from "../assets/img/before-after-61.webp";
+import pic62 from "../assets/img/before-after-62.webp";
 
 const paginationData = [
   {
@@ -341,6 +346,31 @@ const paginationData = [
     id: 57,
     item: pic57,
     tab: "kitchen",
+  },
+  {
+    id: 58,
+    item: pic58,
+    tab: "rooms",
+  },
+  {
+    id: 59,
+    item: pic59,
+    tab: "rooms",
+  },
+  {
+    id: 60,
+    item: pic60,
+    tab: "bathroom",
+  },
+  {
+    id: 61,
+    item: pic61,
+    tab: "bathroom",
+  },
+  {
+    id: 62,
+    item: pic62,
+    tab: "dry-cleaning",
   },
 ];
 

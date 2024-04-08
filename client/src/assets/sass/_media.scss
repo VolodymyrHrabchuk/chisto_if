@@ -22,6 +22,22 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .swiperHomePrev {
+    transform: translateX(-15px);
+    // background-color: #8d8d8d26;
+    backdrop-filter: blur(4px);
+    border-radius: 20%;
+    padding: 10px 10px;
+  }
+  .swiperHomeNext {
+    transform: translateX(15px);
+    backdrop-filter: blur(4px);
+    border-radius: 20%;
+    padding: 10px 10px;
+  }
+}
+
 @media screen and (max-width: 1120px) {
   .heading {
     font-size: 46px !important;
@@ -994,5 +1010,12 @@
     justify-content: space-around;
     flex-direction: column;
     gap: 24px;
+  }
+
+  .swiperHomePrev {
+    display: none;
+  }
+  .swiperHomeNext {
+    display: none;
   }
 }

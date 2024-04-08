@@ -7,6 +7,7 @@ import vacuum6 from "../assets/img/vacuum-6.webp";
 import vacuum7 from "../assets/img/vacuum-7.webp";
 import vacuum8 from "../assets/img/vacuum-8.webp";
 import vacuum9 from "../assets/img/vacuum-9.webp";
+import vacuum10 from "../assets/img/vacuum-10.webp";
 
 const TechData = [
   {
@@ -53,6 +54,11 @@ const TechData = [
     image: vacuum9,
     type: "Парогенератор",
     brand: "Bieffe Magic Vapor RA",
+  },
+  {
+    image: vacuum10,
+    type: "WFP система",
+    brand: "",
   },
 ];
 

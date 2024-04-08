@@ -1,34 +1,35 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import cert from "../assets/img/cert.webp";
 import GiftPopup from "../pages/GiftPopup";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const Certificate = () => {
   const [openPopup, setOpenPopup] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="container">
-      <div className="certificate">
+    <div className='container'>
+      <div className='certificate' ref={ref}>
         <motion.div
-          className="certificate__descr"
+          className='certificate__descr'
           initial={{
             opacity: 0,
             x: -100,
           }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.5,
-              delay: 0.5,
-            },
+          animate={{
+            opacity: isInView ? 1 : 0,
+            x: isInView ? 0 : -100,
           }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.8,
+          }}
         >
-          <h3 className="certificate__heading">
+          <h3 className='certificate__heading'>
             Зроби близьким приємний сюрприз
           </h3>
-          <h4 className="certificate__subhead">
+          <h4 className='certificate__subhead'>
             {" "}
             Подарунок у вигляді сертифіката станете чудовим та незвичним
             сюрпризом для отримувача. Сертифікат включає в себе можливість
@@ -37,7 +38,7 @@ const Certificate = () => {
             замовлення.{" "}
           </h4>
           <motion.button
-            className="btn-md-bl"
+            className='btn-md-bl'
             onClick={() => setOpenPopup(true)}
             whileTap={{ scale: 0.9 }}
           >
@@ -50,17 +51,16 @@ const Certificate = () => {
             opacity: 0,
             x: 100,
           }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.5,
-              delay: 0.5,
-            },
+          animate={{
+            opacity: isInView ? 1 : 0,
+            x: isInView ? 0 : 100,
           }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.8,
+          }}
         >
-          <img src={cert} alt="" className="certificate__img" />
+          <img src={cert} alt='' className='certificate__img' />
         </motion.div>
       </div>
     </div>

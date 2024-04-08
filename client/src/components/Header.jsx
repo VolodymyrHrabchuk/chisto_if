@@ -212,10 +212,10 @@ const Header = () => {
           </AnimatePresence>
         </div>
         <div className='header__contacts'>
-          <a href='tel:+380677699792' className='invisible-ph'>
-            +38 067 769 9792
+          <a href='tel:+380503986244' className='invisible-ph'>
+            +38 050 398 62 44
           </a>
-          <a href='tel:+380677699792' className='visible-ph'>
+          <a href='tel:+380503986244' className='visible-ph'>
             <Phone />
           </a>
           <a

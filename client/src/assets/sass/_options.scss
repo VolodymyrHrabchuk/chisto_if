@@ -51,6 +51,6 @@
 }
 .nav-justified > .nav-link,
 .nav-justified .nav-item {
-  // flex-grow: 0;
+  flex-basis: unset;
   max-width: 248px;
 }

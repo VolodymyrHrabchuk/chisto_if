@@ -29,7 +29,7 @@ const OffersPrice = () => {
                 </span>
               </span>
               <span className='service-price__name'>
-                Регулярне:
+                Базове:
                 <span className='service-price__descr'>
                   {" "}
                   від 45 грн/м<sup>2</sup>
@@ -47,16 +47,19 @@ const OffersPrice = () => {
                 <span className='service-price__descr'>
                   <ul className='service-price__list'>
                     <li>
-                      без меблів від 85 грн/м<sup>2</sup>
+                      без меблів від 100 грн/м<sup>2</sup>
                     </li>
                     <li>
-                      частково меблі від 100 грн/м<sup>2</sup>
+                      частково меблі від 120 грн/м<sup>2</sup>
                     </li>
                     <li>
-                      меблі вмонтовані повністю від 115 грн/м<sup>2</sup>
+                      меблі вмонтовані повністю від 135 грн/м<sup>2</sup>
                     </li>
                   </ul>
                 </span>
+              </span>
+              <span className='service-price__name'>
+                Якщо площа приміщення від 160 м<sup>2</sup>, ціна договірна
               </span>
             </div>
           </Tab>
@@ -67,14 +70,14 @@ const OffersPrice = () => {
                 Миття вікон після ремонту:
                 <span className='service-price__descr'>
                   {" "}
-                  від 150 грн/м<sup>2</sup>
+                  від 180 грн/м<sup>2</sup>
                 </span>
               </span>
               <span className='service-price__name'>
                 Сезонне миття вікон:
                 <span className='service-price__descr'>
                   {" "}
-                  від 130 грн/м<sup>2</sup>
+                  від 150 грн/м<sup>2</sup>
                 </span>
               </span>
             </div>
@@ -133,19 +136,23 @@ const OffersPrice = () => {
             <div className='service-price'>
               <span className='service-price__name'>
                 Хімчистка дивану:
-                <span className='service-price__descr'> від 1200 грн</span>
+                <span className='service-price__descr'> від 1500 грн</span>
               </span>
               <span className='service-price__name'>
                 Хімчистка матрацу (односпальний):
-                <span className='service-price__descr'> від 700 грн</span>
+                <span className='service-price__descr'> від 800 грн</span>
               </span>
               <span className='service-price__name'>
                 Хімчистка матрацу (двоспальний):
-                <span className='service-price__descr'> від 1200 грн</span>
+                <span className='service-price__descr'> від 1500 грн</span>
+              </span>
+              <span className='service-price__name'>
+                Хімчистка подушок:
+                <span className='service-price__descr'> від 150 грн</span>
               </span>
               <span className='service-price__name'>
                 Хімчистка крісла:
-                <span className='service-price__descr'> від 350 грн</span>
+                <span className='service-price__descr'> від 450 грн</span>
               </span>
             </div>
           </Tab>

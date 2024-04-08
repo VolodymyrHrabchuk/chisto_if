@@ -1,5 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const QuestionItem = ({ eventKey, question, answer }) => (
   <div className='questions__item'>
@@ -11,6 +12,8 @@ const QuestionItem = ({ eventKey, question, answer }) => (
 );
 
 const Questions = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const questions = [
     {
       question: "Чи виїжджаєте ви за межі міста?",
@@ -55,23 +58,22 @@ const Questions = () => {
 
   return (
     <div className='container'>
-      <div className='questions'>
+      <div className='questions' ref={ref}>
         <h2 className='heading'>Популярні питання</h2>
         <motion.div
           className='questions__wrapper'
           initial={{
             opacity: 0,
-            x: -100,
+            y: 100,
           }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 0.5,
-              delay: 0.5,
-            },
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isInView ? 0 : 100,
           }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.8,
+          }}
         >
           <Accordion>
             {questions.map((item, index) => (

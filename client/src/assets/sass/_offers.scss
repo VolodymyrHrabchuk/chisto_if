@@ -12,7 +12,7 @@
   padding: 57px 39px 37px 44px;
   gap: 29px;
 
-  &__list { 
+  &__list {
     margin: 10px 0 0;
   }
   &__name {
@@ -35,4 +35,5 @@
   right: 0;
   top: 0;
   transform: translateX(14px);
+  z-index: -1;
 }

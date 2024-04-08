@@ -12,6 +12,7 @@ import xonforte from "../assets/img/xonforte.webp";
 import tornado from "../assets/img/tornado.webp";
 import tablefit from "../assets/img/tablefit.webp";
 
+
 const CleanersData = [
   {
     img: keradet,

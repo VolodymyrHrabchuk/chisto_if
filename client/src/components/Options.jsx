@@ -10,26 +10,27 @@ import { motion } from "framer-motion";
 // Import images
 // import renovation1 from "../assets/img/after-renovation-1.webp";
 // import renovation2 from "../assets/img/after-renovation-2.webp";
-import renovation1 from "../assets/img/renovation.png";
-import renovation2 from "../assets/img/renovation-1.png";
+import renovation1 from "../assets/img/renovation-1.webp";
+import renovation2 from "../assets/img/renovation-1-2.webp";
 // import kitchen from "../assets/img/kitchen.webp";
 // import livingroom from "../assets/img/livingroom.webp";
 // import bathroom from "../assets/img/bathroom.webp";
 // import bedroom from "../assets/img/bedroom.webp";
-import general1 from "../assets/img/general-1.png";
-import general2 from "../assets/img/general-2.png";
-import general3 from "../assets/img/general-3.png";
-import general4 from "../assets/img/general-4.png";
+import general1 from "../assets/img/general-1.webp";
+import general2 from "../assets/img/general-2.webp";
+import general3 from "../assets/img/general-3.webp";
+import general4 from "../assets/img/general-4.webp";
 
 // import regular1 from "../assets/img/regular-1.webp";
 // import regular2 from "../assets/img/regular-2.webp";
 // import regular3 from "../assets/img/regular-3.webp";
 
-import regular1 from "../assets/img/base-3.png";
-import regular2 from "../assets/img/base-2.png";
-import regular3 from "../assets/img/base-1.png";
-import commercial1 from "../assets/img/commercial-1.webp";
-import windows1 from "../assets/img/windows.png";
+import regular1 from "../assets/img/base-3.webp";
+import regular2 from "../assets/img/base-2.webp";
+import regular3 from "../assets/img/base-1.webp";
+// import commercial1 from "../assets/img/commercial-1.webp";
+import windows1 from "../assets/img/windows-1.webp";
+import commerce from "../assets/img/commercial-1.webp";
 
 const images = {
   "post-repair": [
@@ -47,7 +48,7 @@ const images = {
     { src: regular2, alt: "" },
     { src: regular3, alt: "" },
   ],
-  commercial: [{ src: commercial1, alt: "Офіс" }],
+  commercial: [{ src: commerce, alt: "" }],
   windows: [{ src: windows1, alt: "" }],
 };
 
