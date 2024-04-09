@@ -159,7 +159,7 @@ async function sendMail(name, phone, cleaningType, square, address, comments) {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Server started");
 });
 
 app.listen(port, () => {

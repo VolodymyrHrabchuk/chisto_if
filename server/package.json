@@ -1,4 +1,6 @@
 {
+  "name": "server",
+  "version": "1.0.0",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -6,5 +8,8 @@
     "nodemailer": "^6.9.1",
     "nodemailer-express-handlebars": "^6.1.0",
     "nodemon": "^2.0.21"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
   }
 }
