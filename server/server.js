@@ -11,7 +11,7 @@ const hbs = require("nodemailer-express-handlebars");
 require("dotenv").config();
 
 app.use(cors());
-// app.use(express.static(buildPath));
+app.use(express.static(buildPath));
 app.use(express.json());
 
 app.post("/send-popup", async (req, res) => {
