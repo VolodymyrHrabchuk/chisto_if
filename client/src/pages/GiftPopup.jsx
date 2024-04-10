@@ -33,7 +33,7 @@ const GiftPopup = ({ open, onClose }) => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:5100/send-sert", {
+      await axios.post("https://chisto-if-server.vercel.app/send-sert", {
         firstName: data.firstName,
         phoneNumber: data.phoneNumber,
         sumSertificate: data.sumSertificate,

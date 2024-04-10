@@ -37,7 +37,7 @@ const Popup = ({ open, onClose }) => {
         document.querySelectorAll('input[name="cleaningType"]:checked')
       ).map((input) => input.value);
 
-      await axios.post("http://localhost:5100/send-popup", {
+      await axios.post("https://chisto-if-server.vercel.app/send-popup", {
         name: data.name,
         phone: data.phone,
         cleaningType: selectedCleaningTypes,

@@ -10,7 +10,13 @@ const buildPath = path.join(_dirname, "../client/build");
 const hbs = require("nodemailer-express-handlebars");
 require("dotenv").config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://chisto-if.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(express.static(buildPath));
 app.use(express.json());
 
@@ -27,8 +33,15 @@ app.post("/send-popup", async (req, res) => {
 
 app.post("/send-sert", async (req, res) => {
   try {
-    const { firstName, phoneNumber, sumSertificate, squareSertificate, notes } = req.body;
-    await sendSert(firstName, phoneNumber, sumSertificate, squareSertificate, notes);
+    const { firstName, phoneNumber, sumSertificate, squareSertificate, notes } =
+      req.body;
+    await sendSert(
+      firstName,
+      phoneNumber,
+      sumSertificate,
+      squareSertificate,
+      notes
+    );
     res.json({ msg: "Message sent successfully" });
   } catch (error) {
     console.error(error);
@@ -36,7 +49,13 @@ app.post("/send-sert", async (req, res) => {
   }
 });
 
-async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificate, notes) {
+async function sendSert(
+  firstName,
+  phoneNumber,
+  sumSertificate,
+  squareSertificate,
+  notes
+) {
   const sertTransporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -46,7 +65,7 @@ async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificat
       pass: process.env.GMAIL_PASSWORD,
     },
   });
-  
+
   sertTransporter.use(
     "compile",
     hbs({
@@ -61,8 +80,6 @@ async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificat
     })
   );
 
- 
-
   const emailSettings = {
     from: `Karina chisto-if <${process.env.GMAIL_USER}>`,
     to: process.env.SEND_TO,
@@ -72,11 +89,10 @@ async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificat
       firstName,
       phoneNumber,
       sumSertificate: sumSertificate ? "Сертифікат на суму" : "",
-      squareSertificate: squareSertificate? "Сертифікат на площу" : "",
+      squareSertificate: squareSertificate ? "Сертифікат на площу" : "",
       notes,
     },
-    
-  }
+  };
 
   try {
     const info = await sertTransporter.sendMail(emailSettings);
@@ -97,7 +113,6 @@ async function sendMail(name, phone, cleaningType, square, address, comments) {
       pass: process.env.GMAIL_PASSWORD,
     },
   });
-
 
   popupTransporter.use(
     "compile",
