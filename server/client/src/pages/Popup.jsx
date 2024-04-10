@@ -37,7 +37,7 @@ const Popup = ({ open, onClose }) => {
         document.querySelectorAll('input[name="cleaningType"]:checked')
       ).map((input) => input.value);
 
-      await axios.post("https://chisto-if-server.vercel.app/send-popup", {
+      await axios.post(`${window.location.origin}/send-popup`, {
         name: data.name,
         phone: data.phone,
         cleaningType: selectedCleaningTypes,
@@ -71,17 +71,17 @@ const Popup = ({ open, onClose }) => {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="popup"
+            className='popup'
             onClick={onClose}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0  }}
+            exit={{ opacity: 0 }}
           >
             {showThanks ? (
               <PopupAfter onClose={onCloseHandler} />
             ) : (
               <motion.div
-                className="popup__block"
+                className='popup__block'
                 initial={{ y: -50, opacity: 0 }}
                 animate={{
                   y: 0,
@@ -95,9 +95,9 @@ const Popup = ({ open, onClose }) => {
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="popup__heading">
-                  <h3 className="popup__title">Заповніть дані </h3>
-                  <p className="popup__descr">
+                <div className='popup__heading'>
+                  <h3 className='popup__title'>Заповніть дані </h3>
+                  <p className='popup__descr'>
                     {errors.name && <p>{getFieldErrorMessage("name")}</p>}
                     {errors.phone && <p>{getFieldErrorMessage("phone")}</p>}
                     {errors.address && <p>{getFieldErrorMessage("address")}</p>}
@@ -106,20 +106,20 @@ const Popup = ({ open, onClose }) => {
                       <p>{getFieldErrorMessage("cleaningType")}</p>
                     )}
                   </p>
-                  <Cross className="cross" onClick={onCloseHandler} />
+                  <Cross className='cross' onClick={onCloseHandler} />
                 </div>
                 <form
-                  action="#"
-                  className="popup__form"
+                  action='#'
+                  className='popup__form'
                   onSubmit={handleSubmit(onSubmit)}
                 >
-                  <div className="popup__form-item">
+                  <div className='popup__form-item'>
                     <input
-                      type="text"
-                      className="popup__form-input"
-                      id="name"
-                      name="name"
-                      placeholder=" "
+                      type='text'
+                      className='popup__form-input'
+                      id='name'
+                      name='name'
+                      placeholder=' '
                       style={{
                         border: errors?.name
                           ? "1px solid #fb3030"
@@ -128,18 +128,18 @@ const Popup = ({ open, onClose }) => {
                       {...register("name")}
                     />
 
-                    <label className="popup__form-label" htmlFor="name">
-                      <span className="popup__form-span">Ім’я*</span>
+                    <label className='popup__form-label' htmlFor='name'>
+                      <span className='popup__form-span'>Ім’я*</span>
                     </label>
                   </div>
-                  <div className="popup__form-item">
+                  <div className='popup__form-item'>
                     <input
-                      type="text"
-                      className="popup__form-input"
-                      id="phone"
-                      name="phone"
-                      inputMode="numeric"
-                      placeholder=" "
+                      type='text'
+                      className='popup__form-input'
+                      id='phone'
+                      name='phone'
+                      inputMode='numeric'
+                      placeholder=' '
                       style={{
                         border: errors?.phone
                           ? "1px solid #fb3030"
@@ -147,77 +147,77 @@ const Popup = ({ open, onClose }) => {
                       }}
                       {...register("phone")}
                     />
-                    <label className="popup__form-label" htmlFor="phone">
-                      <span className="popup__form-span">Телефон*</span>
+                    <label className='popup__form-label' htmlFor='phone'>
+                      <span className='popup__form-span'>Телефон*</span>
                     </label>
                   </div>
-                  <div className="popup__form-item">
-                    <Accordion className="popup__accordion">
-                      <AccordionItem eventKey="0">
+                  <div className='popup__form-item'>
+                    <Accordion className='popup__accordion'>
+                      <AccordionItem eventKey='0'>
                         <Accordion.Header>Тип прибирання*</Accordion.Header>
                         <Accordion.Body>
-                          <div className="popup__form-checkboxes">
-                            <div className="popup__form-check-wrap">
+                          <div className='popup__form-checkboxes'>
+                            <div className='popup__form-check-wrap'>
                               <input
-                                type="checkbox"
-                                className="popup__form-check"
-                                name="cleaningType"
-                                id="general"
-                                value="general"
+                                type='checkbox'
+                                className='popup__form-check'
+                                name='cleaningType'
+                                id='general'
+                                value='general'
                                 {...register("cleaningType")}
                               />
                               <label
-                                className="popup__form-label-check"
-                                htmlFor="general"
+                                className='popup__form-label-check'
+                                htmlFor='general'
                               >
                                 Генеральне
                               </label>
                             </div>
-                            <div className="popup__form-check-wrap">
+                            <div className='popup__form-check-wrap'>
                               <input
-                                type="checkbox"
-                                className="popup__form-check"
-                                name="cleaningType"
-                                id="regular"
-                                value="regular"
+                                type='checkbox'
+                                className='popup__form-check'
+                                name='cleaningType'
+                                id='regular'
+                                value='regular'
                                 {...register("cleaningType")}
                               />
                               <label
-                                className="popup__form-label-check"
-                                htmlFor="regular"
+                                className='popup__form-label-check'
+                                htmlFor='regular'
                               >
                                 Регулярне
                               </label>
                             </div>
 
-                            <div className="popup__form-check-wrap">
+                            <div className='popup__form-check-wrap'>
                               <input
-                                type="checkbox"
-                                className="popup__form-check"
-                                name="cleaningType"
-                                id="renovation"
-                                value="renovation"
+                                type='checkbox'
+                                className='popup__form-check'
+                                name='cleaningType'
+                                id='renovation'
+                                value='renovation'
                                 {...register("cleaningType")}
                               />
                               <label
-                                className="popup__form-label-check"
-                                htmlFor="renovation"
+                                className='popup__form-label-check'
+                                htmlFor='renovation'
                               >
                                 Післяремонтне
                               </label>
                             </div>
-                            <div className="popup__form-check-wrap">
+                            <div className='popup__form-check-wrap'>
                               <input
-                                type="checkbox"
-                                className="popup__form-check"
-                                name="cleaningType"
-                                id="commercial"
-                                value="commercial"
+                                type='checkbox'
+                                className='popup__form-check'
+                                name='cleaningType'
+                                id='commercial'
+                                value='commercial'
                                 {...register("cleaningType")}
                               />
                               <label
-                                className="popup__form-label-check"
-                                htmlFor="commercial"
+                                className='popup__form-label-check'
+                                htmlFor='commercial'
                               >
                                 Комерційне
                               </label>
@@ -227,13 +227,13 @@ const Popup = ({ open, onClose }) => {
                       </AccordionItem>
                     </Accordion>
                   </div>
-                  <div className="popup__form-item">
+                  <div className='popup__form-item'>
                     <input
-                      type="text"
-                      className="popup__form-input"
-                      id="square"
-                      name="square"
-                      placeholder=" "
+                      type='text'
+                      className='popup__form-input'
+                      id='square'
+                      name='square'
+                      placeholder=' '
                       style={{
                         border: errors?.square
                           ? "1px solid #fb3030"
@@ -241,19 +241,19 @@ const Popup = ({ open, onClose }) => {
                       }}
                       {...register("square")}
                     />
-                    <label className="popup__form-label" htmlFor="square">
-                      <span className="popup__form-span">
+                    <label className='popup__form-label' htmlFor='square'>
+                      <span className='popup__form-span'>
                         Величина приміщення*
                       </span>
                     </label>
                   </div>
-                  <div className="popup__form-item">
+                  <div className='popup__form-item'>
                     <input
-                      type="text"
-                      className="popup__form-input"
-                      id="address"
-                      name="address"
-                      placeholder=" "
+                      type='text'
+                      className='popup__form-input'
+                      id='address'
+                      name='address'
+                      placeholder=' '
                       style={{
                         border: errors?.address
                           ? "1px solid #fb3030"
@@ -261,31 +261,31 @@ const Popup = ({ open, onClose }) => {
                       }}
                       {...register("address")}
                     />
-                    <label className="popup__form-label" htmlFor="address">
-                      <span className="popup__form-span">
+                    <label className='popup__form-label' htmlFor='address'>
+                      <span className='popup__form-span'>
                         Адреса прибирання*
                       </span>
                     </label>
                   </div>
-                  <div className="popup__form-item">
+                  <div className='popup__form-item'>
                     <input
-                      type="text"
-                      className="popup__form-input popup__form-input--text"
-                      id="comments"
-                      name="comments"
-                      placeholder=" "
+                      type='text'
+                      className='popup__form-input popup__form-input--text'
+                      id='comments'
+                      name='comments'
+                      placeholder=' '
                       {...register("comments")}
                     />
                     <label
-                      className="popup__form-label popup__form-label--text"
-                      htmlFor="comments"
+                      className='popup__form-label popup__form-label--text'
+                      htmlFor='comments'
                     >
-                      <span className="popup__form-span ">Коментар</span>
+                      <span className='popup__form-span '>Коментар</span>
                     </label>
                   </div>
                   <button
-                    type="submit"
-                    className="popup__form-btn"
+                    type='submit'
+                    className='popup__form-btn'
                     disabled={!isValid}
                   >
                     Відправити

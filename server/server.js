@@ -10,13 +10,7 @@ const buildPath = path.join(_dirname, "../client/build");
 const hbs = require("nodemailer-express-handlebars");
 require("dotenv").config();
 
-app.use(
-  cors({
-    origin: ["https://chisto-if.vercel.app"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+app.use(cors());
 // app.use(express.static(buildPath));
 app.use(express.json());
 
@@ -174,7 +168,9 @@ async function sendMail(name, phone, cleaningType, square, address, comments) {
 }
 
 app.get("/", (req, res) => {
-  res.send("Server started");
+  // res.send("Server started");
+  app.use(express.static(path.resolve(__dirname, "client", "build")));
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(port, () => {
