@@ -17,7 +17,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.static(buildPath));
+// app.use(express.static(buildPath));
 app.use(express.json());
 
 app.post("/send-popup", async (req, res) => {
