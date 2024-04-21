@@ -33,7 +33,7 @@ const GiftPopup = ({ open, onClose }) => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:5100/send-sert", {
+      await axios.post("http://64.226.112.135/send-sert", {
         firstName: data.firstName,
         phoneNumber: data.phoneNumber,
         sumSertificate: data.sumSertificate,
@@ -44,7 +44,7 @@ const GiftPopup = ({ open, onClose }) => {
     } catch (error) {
       console.log(error);
     }
-    console.log(data);
+
     reset();
   };
 
