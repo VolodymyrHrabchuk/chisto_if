@@ -16,6 +16,7 @@ const Footer = () => {
           <Link to={"/privacy"} className="footer__privacy">
             Політика конфіденційності
           </Link>
+          <a href="https://vh-dev.com" className="footer__privacy">Розробка сайту: VH-DEV</a>
         </div>
         <div className="footer__items">
           <ul className="footer__list">
@@ -107,6 +108,7 @@ const Footer = () => {
         <Link to={"/privacy"} className="footer__privacy">
           Політика конфіденційності
         </Link>
+        <a href="https://vh-dev.com" className="footer__privacy mobile">Розробка сайту: VH-DEV</a>
       </footer>
     </>
   );

@@ -47,6 +47,11 @@
     max-width: 108px;
   }
 
+  &__privacy.mobile {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
   &__privacy:hover {
     color: $blue;
   }
