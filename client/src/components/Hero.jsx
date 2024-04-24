@@ -85,7 +85,7 @@ const Hero = () => {
             }}
           >
             <p className='hero__info-heading'>
-              <CountUp end={2763} duration={4.65} />+
+              <CountUp start={isInView1 ? 0 : null} end={2763} duration={4.65} />+
             </p>
             <p className='hero__info-text'>успішно виконаних замовлень</p>
           </motion.div>
@@ -102,7 +102,7 @@ const Hero = () => {
             }}
           >
             <p className='hero__info-heading'>
-              <CountUp end={95} duration={4.15} />%
+              <CountUp start={isInView1 ? 0 : null} end={95} duration={4.15} />%
             </p>
             <p className='hero__info-text'>
               задоволених клієнтів звертається знову
@@ -121,7 +121,7 @@ const Hero = () => {
             }}
           >
             <p className='hero__info-heading'>
-              <CountUp end={3} duration={4.85} />+
+              <CountUp start={isInView1 ? 0 : null} end={3} duration={4.85} />+
             </p>
             <p className='hero__info-text'>
               насичений років професійного досвіду

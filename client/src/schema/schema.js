@@ -18,7 +18,15 @@ const schema = Yup.object().shape({
   cleaningType: Yup.array()
     .required('Поле "Тип прибирання" є обов’язковим')
     .min(1, "Виберіть хоча б один варіант")
-    .of(Yup.string().oneOf(["general", "regular", "renovation", "commercial"])),
+    .of(
+      Yup.string().oneOf([
+        "general",
+        "regular",
+        "renovation",
+        "commercial",
+        "other",
+      ])
+    ),
   square: Yup.string()
     .required('Поле "Величина приміщення" є обов’язковим')
     .matches(/^[0-9]+$/, "Величина приміщення повинна містити тільки цифри"),

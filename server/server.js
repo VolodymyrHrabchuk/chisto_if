@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5100;
 const fs = require("fs");
+const axios = require("axios");
 const path = require("path");
 const _dirname = path.dirname("");
 const buildPath = path.join(_dirname, "../client/build");
@@ -27,8 +28,15 @@ app.post("/send-popup", async (req, res) => {
 
 app.post("/send-sert", async (req, res) => {
   try {
-    const { firstName, phoneNumber, sumSertificate, squareSertificate, notes } = req.body;
-    await sendSert(firstName, phoneNumber, sumSertificate, squareSertificate, notes);
+    const { firstName, phoneNumber, sumSertificate, squareSertificate, notes } =
+      req.body;
+    await sendSert(
+      firstName,
+      phoneNumber,
+      sumSertificate,
+      squareSertificate,
+      notes
+    );
     res.json({ msg: "Message sent successfully" });
   } catch (error) {
     console.error(error);
@@ -46,7 +54,7 @@ async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificat
       pass: process.env.GMAIL_PASSWORD,
     },
   });
-  
+
   sertTransporter.use(
     "compile",
     hbs({
@@ -61,8 +69,6 @@ async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificat
     })
   );
 
- 
-
   const emailSettings = {
     from: `Karina chisto-if <${process.env.GMAIL_USER}>`,
     to: process.env.SEND_TO,
@@ -72,15 +78,15 @@ async function sendSert(firstName, phoneNumber, sumSertificate, squareSertificat
       firstName,
       phoneNumber,
       sumSertificate: sumSertificate ? "Сертифікат на суму" : "",
-      squareSertificate: squareSertificate? "Сертифікат на площу" : "",
+      squareSertificate: squareSertificate ? "Сертифікат на площу" : "",
       notes,
     },
-    
-  }
+  };
 
   try {
     const info = await sertTransporter.sendMail(emailSettings);
     console.log("Message sent: %s", info.messageId);
+    await sendToTelegramSert(firstName, phoneNumber, sumSertificate, squareSertificate, notes);
   } catch (error) {
     console.error(error);
     throw new Error("Error sending email");
@@ -97,7 +103,6 @@ async function sendMail(name, phone, cleaningType, square, address, comments) {
       pass: process.env.GMAIL_PASSWORD,
     },
   });
-
 
   popupTransporter.use(
     "compile",
@@ -125,6 +130,8 @@ async function sendMail(name, phone, cleaningType, square, address, comments) {
               return "Післяремонтне";
             case "commercial":
               return "Комерційне";
+            case "other":
+              return "Інше";
             default:
               return "Не вказано";
           }
@@ -152,9 +159,73 @@ async function sendMail(name, phone, cleaningType, square, address, comments) {
   try {
     const info = await popupTransporter.sendMail(mailConfigs);
     console.log("Message sent: %s", info.messageId);
+    await sendToTelegram(name, phone, cleaningType, square, address, comments);
   } catch (error) {
     console.error(error);
     throw new Error("Error sending email");
+  }
+}
+
+
+async function sendToTelegram(name, phone, cleaningType, square, address, comments) {
+  try {
+    const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
+
+    const cleaningTypeText = Array.isArray(cleaningType)
+      ? cleaningType
+          .map((type) => {
+            switch (type) {
+              case "general":
+                return "Генеральне";
+              case "regular":
+                return "Регулярне";
+              case "renovation":
+                return "Післяремонтне";
+              case "commercial":
+                return "Комерційне";
+              case "other":
+                return "Інше";
+              default:
+                return "Не вказано";
+            }
+          })
+          .join(", ")
+      : cleaningType
+      ? "Не вказано"
+      : "";
+    const message = `Нова заявка на прибирання:\n\nІм'я: ${name}\nТелефон: ${phone}\nТип прибирання: ${cleaningTypeText}\nПлоща: ${square}\nАдреса: ${address}\nКоментарі: ${comments}`;
+
+    await axios.post(
+      `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
+      {
+        chat_id: chatId,
+        text: message,
+      }
+    );
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function sendToTelegramSert(firstName, phoneNumber, sumSertificate, squareSertificate, notes) {
+  try {
+    const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
+
+    const sertificateType = sumSertificate ? "Сертифікат на суму" : squareSertificate ? "Сертифікат на площу" : "";
+
+    const message = `Ім'я: ${firstName}\nНомер телефону: ${phoneNumber}\nТип сертифікату: ${sertificateType}\nКоментарі: ${notes}`;
+
+    await axios.post(
+      `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
+      {
+        chat_id: chatId,
+        text: message,
+      }
+    );
+  } catch (error) {
+    console.error(error);
   }
 }
 
