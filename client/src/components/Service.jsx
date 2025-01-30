@@ -65,7 +65,7 @@ const Service = () => {
           pagination={{
             clickable: true,
             type: "bullets",
-            dynamicBullets: true,
+            dynamicBullets: false,
             dynamicMainBullets: 1,
           }}
           className='home-swiper'

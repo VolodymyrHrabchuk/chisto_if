@@ -1,6 +1,6 @@
 import article1 from "../assets/img/sofa.webp";
 import article2 from "../assets/img/windows.webp";
-import article3 from "../assets/img/mop.webp";
+import article3 from "../assets/img/mop.jpg";
 
 const articlesData = [
   {

@@ -7,10 +7,14 @@ import cert6 from "../assets/img/cert-6.webp";
 import cert7 from "../assets/img/cert-7.webp";
 import cert8 from "../assets/img/cert-8.webp";
 import cert9 from "../assets/img/cert-9.webp";
+import cert10 from "../assets/img/cert-0-1.webp";
+import cert0 from "../assets/img/cert-0.webp";
 
 const ChemicalsData = {
   diplomas: [
-    { id: 1, imgSrc: cert1 },
+    { id: 0, imgSrc: cert0 },
+    { id: 1, imgSrc: cert10 },
+    { id: 1.1, imgSrc: cert1 },
     { id: 2, imgSrc: cert2 },
     { id: 3, imgSrc: cert3 },
     { id: 4, imgSrc: cert4 },

@@ -43,6 +43,29 @@
   }
 }
 
+.article__img,
+.random-articles__img {
+  width: 100%;
+  height: 632px; /* Set the height to a fixed size */
+  object-fit: cover; /* Ensures the image covers the entire area without distorting */
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.random-articles__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-articles__img {
+  width: 100%;
+  height: 220px; /* Set the height for the smaller images */
+  object-fit: cover;
+  object-position:  center;
+  margin-bottom: 10px; /* Add some space between image and text */
+}
+
+
 .pattern {
   position: absolute;
   top: -2%;

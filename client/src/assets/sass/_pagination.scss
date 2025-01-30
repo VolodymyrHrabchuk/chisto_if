@@ -42,7 +42,12 @@
 }
 
 .results-tabs {
-  margin: 72px 0 0 112px;
+  margin: 72px auto 0;
+  max-width: 1300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .full-image-view {
